@@ -20,5 +20,5 @@ Exit:
 Exits the program.
 
 
-Learning outcomes:
+Learning outcomes: \\
   Improved skills in file manipulation in C programming.
