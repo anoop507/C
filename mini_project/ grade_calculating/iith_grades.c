@@ -2,12 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-typedef struct {
-    char course_name[50];
-    int total_credit;
-    char grade[2];
-} Course;
-
 void menu();
 double CGPA();
 double SGPA(int);
@@ -16,8 +10,9 @@ int gradePoint(char[]);
 void addCourseDetail();
 
 int main() {
-    
-    // FILE* file = fopen("IITH_course.txt","w");
+
+    // Run this line of code at the beginning of using this prgroam. This is for adding the header and all to the "courses.txt"
+    // FILE* file = fopen("courses.txt","w");
     // char s[] = "Course Name";
     // fprintf(file,"Semester | %-30s | Total Credits | Grade |\n",s);
     // fclose(file);
@@ -68,7 +63,7 @@ void menu() {
 }
 
 double CGPA() {
-    FILE* file = fopen("IITH_course.txt","r");
+    FILE* file = fopen("courses.txt","r");
     fseek(file,68,SEEK_SET);
     int totalCredit;
     double cgpa;
@@ -97,7 +92,7 @@ double CGPA() {
 }
 
 double SGPA(int semester) {
-    FILE* file = fopen("IITH_course.txt","r");
+    FILE* file = fopen("courses.txt","r");
     fseek(file,68,SEEK_SET);
     int totalCredit;
     double cgpa;
@@ -131,7 +126,7 @@ double SGPA(int semester) {
 }
 
 void printDetails() {
-    FILE* file = fopen("IITH_course.txt","r");
+    FILE* file = fopen("courses.txt","r");
     char buff[100];
     while (fgets(buff,69,file)) {
         printf("%s",buff);
@@ -151,7 +146,7 @@ int gradePoint(char grade[]) {
 }
 
 void addCourseDetail() {
-    FILE* file = fopen("IITH_course.txt","a");
+    FILE* file = fopen("courses.txt","a");
     int semester,totalCredit;
     char course_name[30];
     char grade[3];
