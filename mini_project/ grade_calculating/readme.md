@@ -18,3 +18,7 @@ Allows you to add new course details to the "courses" file. This includes enteri
 
 Exit:
 Exits the program.
+
+
+Learning outcomes:
+  Improved skills in file manipulation in C programming.
